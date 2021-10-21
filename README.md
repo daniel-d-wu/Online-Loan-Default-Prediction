@@ -4,13 +4,13 @@ This repo stores my progress in comparing Logit and XGBoost in predicting defaul
 
 Logit:
 
-Precision:  0.5469662921348315
-Recall:  0.5528467595396729
+Precision:  0.5469662921348315 <br>
+Recall:  0.5528467595396729 <br>
 AUC:  0.5613728170916938
 
 XGBoost:
 
-Precision:  0.8299625468164794
-Recall:  0.7542545949625595
+Precision:  0.8299625468164794 <br>
+Recall:  0.7542545949625595 <br>
 AUC:  0.7853303611829847
 
