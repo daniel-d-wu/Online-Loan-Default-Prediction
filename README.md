@@ -1,6 +1,6 @@
 # Online-Loan-Default-Prediction
 
-This repo stores my progress in comparing Logit and XGBoost in predicting default in online loans. I use 2007-2011 lending club data to test these two models. So far, I find that XGBoost does a much better job at predicting default. The performance is as follows:
+This repo stores my progress in comparing Logit and XGBoost in predicting default in online loans. I use 2007-2011 Lending Club data to test these two models. So far, I find that XGBoost does a much better job at predicting default with the same features. The performance is as follows:
 
 Logit:
 
