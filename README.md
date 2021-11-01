@@ -7,7 +7,7 @@ In this project, I fit three models to predict charge-offs in Lending Club loans
   Somewhat surprisingly, I find that Random Forests perform the best. This may be due to charge-offs being a relatively rare event. In my sample, 5,627 out of 39,717 loans are charged off (~14%), requiring me to rebalance the classes. I obtain the following results for each model:
   
   
-  ![alt text](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/figures/Logit Confusion Matrix_notext.jpg?raw=true)
+  ![text](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/figures/Logit_Confusion_Matrix_notext.jpg)
 
   
   
