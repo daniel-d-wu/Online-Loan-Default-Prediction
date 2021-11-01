@@ -14,19 +14,14 @@ In the second part, I ask whether soft information in the form of text descripti
 
 ![paid_bigrams](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/paid_bigrams.jpg)
 
-Incorp
-
-The main insight from this project is that incorporating bigrams as features in each model improves ``Recall``, but decreases ``Precision``. The implication is that using text features will "over-predict" charge-offs at the expense of foregone applicants that are otherwise creditworthy.    
+Using text information, I find that ``Recall`` is substantially improved in each model, but ``Precision`` gets worse. For instance, in XGBoost, ``Recall`` improves from 0.66 to 0.75, but ``Precision`` decreases from 0.84 to 0.80. Similarly, in the Random Forest Model, ``Recall`` is improved from  0.82 to 0.86, but ``Precision`` decreases from 0.97 to 0.94. This suggests that text features will "over-predict" charge-offs at the expense of foregone applicants that are otherwise creditworthy (commit more type 1 errors, but fewer type 2 errors).
  
- ### Part 1 Prediction without Text information
-  
-  
-  
+ ### Part 1: Performance with only (Hard) Financial information
   
 ![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_notext.jpg)
   
-<b>Precision</b>:  0.56 <br>
-<b>Recall</b>:  0.43 <br>
+<b>Precision</b>:  0.54 <br>
+<b>Recall</b>:  0.44 <br>
   
 ![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_notext.jpg)
 
@@ -38,11 +33,24 @@ The main insight from this project is that incorporating bigrams as features in 
 <b>Precision</b>:  0.84 <br>
 <b>Recall</b>:  0.66 <br>
   
+![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve.jpg)
   
+### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
   
+![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix.jpg)
   
+<b>Precision</b>:  0.56 <br>
+<b>Recall</b>:  0.56 <br>
   
-  
+![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix.jpg)
+
+<b>Precision</b>:  0.94 <br>
+<b>Recall</b>:  0.86 <br>
+
+![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix.jpg)
+
+<b>Precision</b>:  0.80 <br>
+<b>Recall</b>:  0.75 <br> 
   
   
   
