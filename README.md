@@ -37,17 +37,17 @@ Using text information, I find that ``Recall`` is substantially improved in each
   
 ### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
   
-![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix.jpg)
+![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text.jpg)
   
 <b>Precision</b>:  0.56 <br>
 <b>Recall</b>:  0.56 <br>
   
-![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix.jpg)
+![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.jpg)
 
 <b>Precision</b>:  0.94 <br>
 <b>Recall</b>:  0.86 <br>
 
-![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix.jpg)
+![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.jpg)
 
 <b>Precision</b>:  0.80 <br>
 <b>Recall</b>:  0.75 <br> 
