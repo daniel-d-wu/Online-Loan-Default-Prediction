@@ -33,7 +33,7 @@ Using text information, I find that ``Recall`` is substantially improved in each
 <b>Precision</b>:  0.84 <br>
 <b>Recall</b>:  0.66 <br>
   
-![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve.jpg)
+![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_notext.jpg)
   
 ### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
   
