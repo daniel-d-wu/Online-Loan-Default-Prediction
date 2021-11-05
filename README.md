@@ -14,8 +14,11 @@ In the second part, I ask whether soft information in the form of text descripti
 
 ![paid_bigrams](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/paid_bigrams2.jpg)
 
-Using text information, I find that ``Recall`` is substantially improved in each model, but ``Precision`` gets worse. For instance, in XGBoost, ``Recall`` improves from 0.66 to 0.75, but ``Precision`` decreases from 0.84 to 0.80. Similarly, in the Random Forest Model, ``Recall`` is improved from  0.82 to 0.86, but ``Precision`` decreases from 0.97 to 0.94. This suggests that text features will "over-predict" charge-offs at the expense of foregone applicants that are otherwise creditworthy (commit more type 1 errors, but fewer type 2 errors).
- 
+Using text information, I find that ``Recall`` is substantially improved in each model, but ``Precision`` gets worse. For instance, in XGBoost, ``Recall`` improves from 0.66 to 0.75, but ``Precision`` decreases from 0.84 to 0.80. Similarly, in the Random Forest Model, ``Recall`` is improved from  0.82 to 0.86, but ``Precision`` decreases from 0.97 to 0.94. This suggests that text features will "over-predict" charge-offs at the expense of foregone applicants that are otherwise creditworthy (commit more type 1 errors, but fewer type 2 errors). For ease of communication, I abstract away a rigorous framework describing this tradeoff, and prescribe the following business recommendation for loan companies that have text data:
+
+1) If the company's objective is aligned with social welfare, or if charge-offs are proportionally expensive, it is favorable to include text features in their decision algorithms. <br>
+2) If the foregone cost of incorrectly labelling creditworthy applicants is proportionally great, it is favorable to exclude text features.
+
  ### Part 1: Performance with only (Hard) Financial information
   
 ![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_notext.jpg)
