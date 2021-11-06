@@ -23,39 +23,39 @@ Using text information, I find that ``Recall`` is substantially improved in each
 
  ### Part 1: Performance with only (Hard) Financial information
   
-![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_notext.jpg)
+![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_notext_11.6.21.jpg)
   
-<b>Precision</b>:  0.54 <br>
-<b>Recall</b>:  0.44 <br>
+<b>Precision</b>:  0.42 <br>
+<b>Recall</b>:  0.55 <br>
   
-![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_notext.jpg)
+![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_notext_11.6.21.jpg)
 
-<b>Precision</b>:  0.97 <br>
-<b>Recall</b>:  0.82 <br>
+<b>Precision</b>:  0.81 <br>
+<b>Recall</b>:  0.97 <br>
 
-![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_notext.jpg)
+![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_notext_11.6.21.jpg)
 
-<b>Precision</b>:  0.84 <br>
-<b>Recall</b>:  0.66 <br>
+<b>Precision</b>:  0.65 <br>
+<b>Recall</b>:  0.83 <br>
   
-![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_notext.jpg)
+![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_notext_11.6.21.jpg)
   
 ### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
   
-![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text.jpg)
+![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text_text.11.6.21.jpg)
   
 <b>Precision</b>:  0.56 <br>
-<b>Recall</b>:  0.56 <br>
+<b>Recall</b>:  0.57 <br>
   
-![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.jpg)
+![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.11.6.21.jpg)
 
-<b>Precision</b>:  0.94 <br>
-<b>Recall</b>:  0.86 <br>
+<b>Precision</b>:  0.91 <br>
+<b>Recall</b>:  0.99 <br>
 
-![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.jpg)
+![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.11.6.21.jpg)
 
-<b>Precision</b>:  0.80 <br>
-<b>Recall</b>:  0.75 <br> 
+<b>Precision</b>:  0.75 <br>
+<b>Recall</b>:  0.80 <br> 
   
   
   
