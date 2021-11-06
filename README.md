@@ -19,9 +19,9 @@ After including text features, I find that ``Precision`` is substantially improv
 These results suggest that text features are able to effectively identify creditworthy borrowers, reducing the opportunity cost of wrongfully labelling foregone applicants. However, an increase in the rate of mislabelling uncreditworthy applicants is a risk, as shown in the decrease in ``Recall`` of XGBoost (More type 2 errors, but fewer type 1 errors). For ease of communication, I abstract away a rigorous framework, and prescribe the following business recommendation for loan companies that have text data to potentially inform their decisions:
 
 ### Recommendation:
-1) If the foregone cost of incorrectly labelling creditworthy applicants is proportionally great, it is favorable to include text features to help with predicting creditworthy applicants.
+1) If the foregone cost of incorrectly labelling creditworthy applicants is proportionally great, it is favorable to include bigrams as text features to help with predicting creditworthy applicants.
 
-3) If the company's objective is aligned with social welfare, or if charge-offs are proportionally expensive, it is favorable to <b> not </b> include text features in their decision algorithms. <br>
+3) If the company's objective is aligned with social welfare, or if charge-offs are proportionally expensive, it is favorable to <b> not </b> include bigrams as text features in their decision algorithms. <br>
  
  
  ### Part 1: Performance with only (Hard) Financial information
