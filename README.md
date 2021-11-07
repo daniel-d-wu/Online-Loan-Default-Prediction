@@ -21,7 +21,7 @@ These results suggest that text features are able to effectively identify credit
 ### Recommendation:
 1) If the foregone cost of incorrectly labelling creditworthy applicants is proportionally great, it is favorable to include bigrams as text features to help with predicting creditworthy applicants.
 
-3) If the company's objective is aligned with social welfare, or if charge-offs are proportionally expensive, it is favorable to <b> not </b> include bigrams as text features in their decision algorithms. <br>
+3) If the company's objective is aligned with social welfare, or if charge-offs are proportionally expensive, it may  <b> not </b> be favorable to include bigrams as text features in their decision algorithms depending on the algorithm. <br>
  
  
  ### Part 1: Performance with only (Hard) Financial information
