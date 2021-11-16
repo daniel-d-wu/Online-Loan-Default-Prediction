@@ -28,18 +28,18 @@ These results provide suggestive evidence that text features are able to boost p
   
 ![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix.jpg)
   
-<b>Precision</b>:  0.42 <br>
+<b>Precision</b>:  0.55 <br>
 <b>Recall</b>:  0.55 <br>
   
 ![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix.jpg)
 
-<b>Precision</b>:  0.81 <br>
-<b>Recall</b>:  0.97 <br>
+<b>Precision</b>:  0.87 <br>
+<b>Recall</b>:  0.96 <br>
 
 ![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix.jpg)
 
-<b>Precision</b>:  0.65 <br>
-<b>Recall</b>:  0.83 <br>
+<b>Precision</b>:  0.75 <br>
+<b>Recall</b>:  0.82 <br>
   
 ![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve.jpg)
   
@@ -47,18 +47,18 @@ These results provide suggestive evidence that text features are able to boost p
   
 ![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text.jpg)
   
-<b>Precision</b>:  0.56 <br>
+<b>Precision</b>:  0.57 <br>
 <b>Recall</b>:  0.57 <br>
   
 ![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.jpg)
 
-<b>Precision</b>:  0.91 <br>
+<b>Precision</b>:  0.94 <br>
 <b>Recall</b>:  0.99 <br>
 
 ![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.jpg)
 
 <b>Precision</b>:  0.75 <br>
-<b>Recall</b>:  0.80 <br> 
+<b>Recall</b>:  0.79 <br> 
   
 ![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_text.jpg)
 
