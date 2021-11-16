@@ -14,7 +14,7 @@ In the second part, I ask whether soft information in the form of text descripti
 
 ![paid_bigrams](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/paid_bigrams.jpg)
 
-After including text features, I arrive at different results across models. In XGBoost, ``Precision`` remains at 0.75, but ``Recall`` decreases from 0.82 to 0.79. The trend is more favorable in the Logistic Regression model, where both ``Precision`` and ``Recall`` improves from 0.55 to 0.57. The greatest improvement is seen in the Random Forest model, where ``Precision`` increases from 0.87 to 0.94 and ``Recall`` improves from 0.96 to 0.99, emerging as the best model for online loan performance prediction with and without text features.
+After including text features, I arrive at different results across models. In XGBoost, <b><i>Precision</i></b> remains at 0.75, but <i><b>Recall</i></b> decreases from 0.82 to 0.79. The trend is more favorable in the Logistic Regression model, where both <i><b>Precision</i></b> and <i><b>Recall</i></b> improves from 0.55 to 0.57. The greatest improvement is seen in the Random Forest model, where <i><b>Precision</i></b> increases from 0.87 to 0.94 and <i><b>Recall</i></b> improves from 0.96 to 0.99, emerging as the best model for online loan performance prediction with and without text features.
 
 These results provide suggestive evidence that text features are able to boost prediction of creditworthy borrowers, reducing the opportunity cost of wrongfully labelling foregone applicants. However, an increase in the rate of mislabelling uncreditworthy applicants is a risk, as shown in the decrease in ``Recall`` of XGBoost (More type 2 errors, but fewer type 1 errors). 
 
