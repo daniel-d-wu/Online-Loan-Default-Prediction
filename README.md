@@ -26,17 +26,17 @@ These results suggest that text features are able to effectively identify credit
  
  ### Part 1: Performance with only (Hard) Financial information
   
-![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_notext_11.6.21.jpg)
+![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix.jpg)
   
 <b>Precision</b>:  0.42 <br>
 <b>Recall</b>:  0.55 <br>
   
-![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_notext_11.6.21.jpg)
+![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix.jpg)
 
 <b>Precision</b>:  0.81 <br>
 <b>Recall</b>:  0.97 <br>
 
-![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_notext_11.6.21.jpg)
+![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix.jpg)
 
 <b>Precision</b>:  0.65 <br>
 <b>Recall</b>:  0.83 <br>
@@ -45,22 +45,23 @@ These results suggest that text features are able to effectively identify credit
   
 ### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
   
-![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text_text.11.6.21.jpg)
+![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text.jpg)
   
 <b>Precision</b>:  0.56 <br>
 <b>Recall</b>:  0.57 <br>
   
-![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.11.6.21.jpg)
+![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.jpg)
 
 <b>Precision</b>:  0.91 <br>
 <b>Recall</b>:  0.99 <br>
 
-![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.11.6.21.jpg)
+![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.jpg)
 
 <b>Precision</b>:  0.75 <br>
 <b>Recall</b>:  0.80 <br> 
   
-  
+![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_text.jpg)
+
   
   
 
