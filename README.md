@@ -1,68 +1,43 @@
-# Can a Machine replace a Loan Officer?
+# Loan Performance Prediction: Can a Machine replace a Loan Officer?
 
-In this project, I attempt to predict loan default using statistical learning methods. I fit three models on Lending Club's loan performance data: A (Regularized) Logistic Regression, Random Forest (RF) and Extreme Gradient Boosting (XGBoost). In the first part of this project, the objective is to test which model performs the best. In the second part, I incorporate text information from loan descriptions as features to use for prediction to test whether this boosts performance. Specifically, I include the top 200 most common bigrams and the top 25 bigrams with the highest discriminating power for each target label based the following simple calculation:   
+### Objective:
+
+The purpose of this project is twofold. First, I design statistical learning models to accurately predict binary loan performance indicators (charge-offs and paid off) using LendingClub's early loans (2007-2011). Secondly, I engineer additional text features to "test" how well textual information improves loan performance prediction. To that end, I choose predictive models that have methods to infer, or at least interpret, the impact of features on prediction performance, including Logistic Regression, Random Forests and Gradient Boosting.  
+
+### Data preprocessing and EDA:
+
+Before designing the models, I take a few steps to address missing values and outliers. I drop columns with missing values and impute values for rare events such as Bankruptcies and Collections with 0 instead of the mean. Eventually, all of these imputed variables have such low variance that I decide not to include them as features. For variables with considerably large variance such as income, number of accounts and revolving balance, I winsorize at the 1% and 99% levels in order to reduce the effect of outliers. Additionally, I explore LendingClub's free form text field that allows the applicant to write a note to prospective investors. I construct bigrams following ``Netzer, Lemaire and Herzenstein 2019``, and calculate the odds of default for each bigram with the following formula:
 
 ![text](https://latex.codecogs.com/svg.latex?\frac{P(bigram|defaulted)}{P(bigram|repaid)}) 
 
-## Results and Main Insight:
-
-In the first part, I find that Random Forest (somewhat) surprisingly outperformed XGBoost. This is likely because charge-offs are relatively rare events. In the 2007-2011 Lending Club sample, there are 5,627 out of 39,717 loans that are charged off (~14%), requiring me to upsample charged off datapoints. XGBoost is likely overfitting to the noise, since upsampling does not provide additional variation from which systematic patterns can be learned. RF is less prone to overfitting, since independent trees are learned in parallel.
-
-In the second part, I ask whether soft information in the form of text descriptions can be used to boost prediction. Specifically, I incorporate bigrams that are most indicative of charge-off and repayment. Before running the models, I find some interesting patterns in the text descriptions of borrowers that default versus borrowers that do not. Bigrams associated with high odds of default mention two key things: 1) <b>family</b> and 2) <b>uncertainty</b>. For instance, words such as "<i><b>stress</b></i>", "<i><b>emergency</b></i>", "<i><b>surgery</b></i>", "<i><b>home</b></i>", "<i><b>family</b></i>", "<i><b>worry</b></i>", "<i><b>wife</b></i>" and "<i><b>husband</b></i>" are featured in the top 25 bigrams associated with high odds of charge-off. <br> <br> In contrast, the bigrams associated with low odds of defaulting use specific terminology related to repayment, with words such as "<i><b>efficient</b></i>", "<i><b>reduce</b></i>", "<i><b>save</b></i>", "<i><b>cover</b></i>", "<i><b>sell</b></i>", "<i><b>completion</b></i>" and "<i><b>working</b></i>". Additionally, a simple comparison of bigrams suggests that some types of loans, such as  home improvements are more likely to repay. The top bigram associated with repayment is <b><i>("energy", "efficient")</b></i>. 
+For the top 50 bigrams with the highest odds of default, bigrams involving family <b>(('husband', 'worked'), ('emergency', 'family'))</b>, uncertainty <b>(('free', 'worry'), ('like', 'stress'))</b> and extremities <b>(('always', 'stay')</b>, <b>('cards', 'always'))</b> appear, while the top 50 bigrams with the lowest odds of default feature specific credit terminology and verbs <b>(('rate', 'good')</b>, <b>('save', 'enough')</b>, <b>('reduce', 'overall'))</b>.
 
 ![default_bigrams](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/chgoff_bigrams.jpg)
 
 ![paid_bigrams](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/paid_bigrams.jpg)
 
-After including text features, I arrive at different results across models. In XGBoost, <b><i>Precision</i></b> remains at 0.75, but <i><b>Recall</i></b> decreases from 0.82 to 0.79. The trend is more favorable in the Logistic Regression model, where both <i><b>Precision</i></b> and <i><b>Recall</i></b> improves from 0.55 to 0.57. The greatest improvement is seen in the Random Forest model, where <i><b>Precision</i></b> increases from 0.87 to 0.94 and <i><b>Recall</i></b> improves from 0.96 to 0.99, emerging as the best model for online loan performance prediction with and without text features.
 
-These results provide suggestive evidence that text features are able to boost prediction of creditworthy borrowers, reducing the opportunity cost of wrongfully labelling foregone applicants. However, an increase in the rate of mislabelling uncreditworthy applicants is a risk, as shown in the decrease in ``Recall`` of XGBoost (More type 2 errors, but fewer type 1 errors). 
+### Feature Engineering:
 
-### Recommendation:
-1) If the foregone cost of incorrectly labelling creditworthy applicants is proportionally great, it is favorable to include bigrams as text features to help with predicting creditworthy applicants.
+I exclude columns that are not helpful, such as Example IDs, and columns with high collinearity with other variables, leaving me with important credit and personal characteristics such as DTI, Loan Amount, Loan Purpose and Years of Employment. 
 
-3) If the company's objective of profit maximization is co-aligned with social welfare, or if charge-offs are proportionally expensive, it may  <b> not </b> be favorable to include bigrams as text features in their decision algorithms depending on the algorithm. <br>
- 
- 
- ### Part 1: Performance with only (Hard) Financial information
-  
-![logit_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix.jpg)
-  
-<b>Precision</b>:  0.55 <br>
-<b>Recall</b>:  0.55 <br>
-  
-![rf_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix.jpg)
+In addition to Financial features, I create an expanded set of features using the top 200 most common bigrams found in the free form field, along with the top 50 bigrams with the highest (and lowest) odds of default constructed in the EDA section. I run a simple decision tree classifier with only text features, in order to determine the (feature) importance of each bigram, and select the top 50 bigrams with the highest importance.
 
-<b>Precision</b>:  0.87 <br>
-<b>Recall</b>:  0.96 <br>
+### Performance Results:
 
-![xgb_1](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix.jpg)
+The best model was Random Forest with an accuracy of 83%. XGBoost had an accuracy of 73% and Logistic regression had an accuracy of 54%.
 
-<b>Precision</b>:  0.75 <br>
-<b>Recall</b>:  0.82 <br>
-  
-![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve.jpg)
-  
-### Part 2: Performance with (Hard) Financial information and (Soft) Textual information
-  
-![logit_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Logit_Confusion_Matrix_text.jpg)
-  
-<b>Precision</b>:  0.57 <br>
-<b>Recall</b>:  0.57 <br>
-  
-![rf_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/Random_Forest_Confusion_Matrix_text.jpg)
+### Text Enhancement Results:
 
-<b>Precision</b>:  0.94 <br>
-<b>Recall</b>:  0.99 <br>
+The AUC for the XGBoost model improved by 1.5% after the addition of text features, while AUC only increase by roughly 0.3% for Random Forests. This suggest although Random Forests perform better with baseline characteristics, additional improvements that incorporate non-traditional/alternative data may be better incorporated in a gradient boosting model.
 
-![xgb_2](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/XGBoost_Confusion_Matrix_text.jpg)
 
-<b>Precision</b>:  0.75 <br>
-<b>Recall</b>:  0.79 <br> 
-  
-![roc](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_text.jpg)
 
-  
+
+
+
+
+
   
 
   
