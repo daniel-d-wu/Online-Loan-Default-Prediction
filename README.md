@@ -1,4 +1,4 @@
-# Loan Performance Prediction: Can a Machine replace a Loan Officer?
+## Loan Performance Prediction: Can a Machine replace a Loan Officer?
 
 ### Objective:
 
