@@ -32,6 +32,9 @@ The best model was Random Forest with an accuracy of 83%. XGBoost had an accurac
 The AUC for the XGBoost model improved by 1.5% after the addition of text features, while AUC only increase by roughly 0.3% for Random Forests. This suggest although Random Forests perform better with baseline characteristics, additional improvements that incorporate non-traditional/alternative data may be better incorporated in a gradient boosting model.
 
 
+![ROC_curve_rf](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_rf.jpg)
+
+![ROC_curve_xgb](https://github.com/daniel-d-wu/Online-Loan-Default-Prediction/blob/main/figures/ROC_curve_xgb.jpg)
 
 
 
