@@ -1,8 +1,12 @@
 ## Loan Performance Prediction: Can a Machine replace a Loan Officer?
 
-### Objective:
+### Goal:
 
-The purpose of this project is twofold. First, I design statistical learning models to accurately predict binary loan performance indicators (charge-offs and paid off) using LendingClub's early loans (2007-2011). Secondly, I engineer additional text features to "test" how well textual information improves loan performance prediction. To that end, I choose predictive models that have methods to infer, or at least interpret, the impact of features on prediction performance, including Logistic Regression, Random Forests and Gradient Boosting.  
+There are two objectives in this project.
+
+1) Design statistical learning models to accurately predict binary loan performance indicators (charge-offs and paid off) using LendingClub's early loans (2007-2011). 
+
+2) Find a way to incorporate text features to enhance loan performance prediction. 
 
 ### Data preprocessing and EDA:
 
