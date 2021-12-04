@@ -4,7 +4,7 @@
 
 There are two objectives in this project.
 
-1) Design a statistical learning model to predict binary loan performance indicators (charge-offs and paid-off) using LendingClub's unsecured personal loans from 2007-2011. 
+1) Design and build a machine learning model to predict binary loan performance indicators (charge-offs and paid-off) using LendingClub's unsecured personal loans from 2007-2011. 
 
 2) Test how well text features enhance loan performance prediction. 
 
